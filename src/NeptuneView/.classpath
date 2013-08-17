@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 6"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry excluding="MoviePlayer.java" including="NeptuneFrame.java|NeptunePlayer.java|NeptuneView.java|Player.java|PlayerControlsPanel.java|PlayerVideoAdjustPanel.java|testPlayer1.java" kind="src" path="src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Users/ericzhu/Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/caprica-vlcj-vlcj-2.4.1-4-g8d081c8.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/jmf-2_1_1e-alljava.zip"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/fmj-20070928-0938.zip"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/jna.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Desktop/TXE java 7/TXE/src/swing-layout-1.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1-dist.zip"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1/jna-3.5.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1/platform-3.5.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1/vlcj-2.4.1-javadoc.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1/vlcj-2.4.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1/vlcj-2.4.1-test-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1/vlcj-2.4.1-tests.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Downloads/vlcj-2.4.1/vlcj-2.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Desktop/rt.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericzhu/Desktop/jfxrt.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
