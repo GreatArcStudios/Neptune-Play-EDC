@@ -90,8 +90,9 @@ import com.sun.jna.platform.WindowUtils;
  * Java7 provides -Dsun.java2d.xrender=True or -Dsun.java2d.xrender=true, might
  * give some general performance improvements in graphics rendering.
  */
+@SuppressWarnings({ "deprecation", "unused" })
 public class NeptunePlayer {
-
+	
 	private JFrame mainFrame;
 	private Canvas videoSurface;
 	private JPanel controlsPanel;
@@ -102,9 +103,9 @@ public class NeptunePlayer {
 	private EmbeddedMediaPlayer mediaPlayer;
 
 	public static void main(final String[] args) throws Exception {
+		NativeLibrary.addSearchPath("vlc", "/Applications/VLC.app/Contents/MacOS/lib");
+		System.setProperty("jna.library.path", "/Applications/VLC.app/Contents/MacOS/lib");
 		LibVlc libVlc = LibVlcFactory.factory().create();
-		NativeLibrary.addSearchPath("vlc", "/Users/ericzhu/Desktop/MacOS");
-		System.setProperty("jna.library.path", "/Users/ericzhu/Desktop/MacOS");
 		Logger.info("  version: {}", libVlc.libvlc_get_version());
 		Logger.info(" compiler: {}", libVlc.libvlc_get_compiler());
 		Logger.info("changeset: {}", libVlc.libvlc_get_changeset());
