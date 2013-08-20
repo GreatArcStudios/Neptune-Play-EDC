@@ -13,7 +13,6 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
 </bootpath>
 <extensionDirs>
-<entry path="/Users/ericzhu/Library/Java/Extensions"/>
 <entry path="/Library/Java/Extensions"/>
 <entry path="/System/Library/Java/Extensions"/>
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>

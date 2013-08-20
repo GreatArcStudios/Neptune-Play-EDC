@@ -1,4 +1,9 @@
 /*
+ * Modified Heavily by Eric at Great Ark Studios.
+ * This is to be used in Neptune Play. 
+ * Neptune Play is provided by Great Ark Studios.
+ * And is available as a commercially available source code or a app for free.
+ * 
  * This file is part of VLCJ.
  *
  * VLCJ is free software: you can redistribute it and/or modify
@@ -195,8 +200,7 @@ public class PlayerControlsPanel extends JPanel {
 		fileChooser.setFileFilter(defaultFilter);
 
 		fullScreenButton = new JButton();
-		fullScreenButton.setIcon(new ImageIcon(getClass().getClassLoader()
-				.getResource("icons/image.png")));
+		fullScreenButton.setIcon(new ImageIcon(getClass().getResource("images/improperly-oriented.gif")));
 		fullScreenButton.setToolTipText("Toggle full-screen");
 
 		subTitlesButton = new JButton();

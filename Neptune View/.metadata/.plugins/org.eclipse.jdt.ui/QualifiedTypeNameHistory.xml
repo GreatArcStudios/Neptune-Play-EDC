@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="uk.co.caprica.vlcj.runtime.RuntimeUtil"/>
+<fullyQualifiedTypeName name="uk.co.caprica.vlcj.binding.LibVlc"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent"/>
+<fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
+<fullyQualifiedTypeName name="uk.co.caprica.vlcj.test.basic.PlayerControlsPanel"/>
+<fullyQualifiedTypeName name="uk.co.caprica.vlcj.test.basic.PlayerVideoAdjustPanel"/>
+<fullyQualifiedTypeName name="com.sun.jna.Native"/>
+<fullyQualifiedTypeName name="com.sun.jna.NativeLibrary"/>
+</qualifiedTypeNameHistroy>

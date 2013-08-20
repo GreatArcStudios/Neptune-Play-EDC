@@ -90,8 +90,9 @@ import com.sun.jna.platform.WindowUtils;
  * Java7 provides -Dsun.java2d.xrender=True or -Dsun.java2d.xrender=true, might
  * give some general performance improvements in graphics rendering.
  */
+@SuppressWarnings({ "deprecation", "unused" })
 public class NeptunePlayer {
-
+	
 	private JFrame mainFrame;
 	private Canvas videoSurface;
 	private JPanel controlsPanel;
@@ -102,9 +103,9 @@ public class NeptunePlayer {
 	private EmbeddedMediaPlayer mediaPlayer;
 
 	public static void main(final String[] args) throws Exception {
+		NativeLibrary.addSearchPath("vlc", "/Applications/VLC.app/Contents/MacOS/lib");
+		System.setProperty("jna.library.path", "/Applications/VLC.app/Contents/MacOS/lib");
 		LibVlc libVlc = LibVlcFactory.factory().create();
-		NativeLibrary.addSearchPath("vlc", "/Users/ericzhu/Desktop/MacOS");
-		System.setProperty("jna.library.path", "/Users/ericzhu/Desktop/MacOS");
 		Logger.info("  version: {}", libVlc.libvlc_get_version());
 		Logger.info(" compiler: {}", libVlc.libvlc_get_compiler());
 		Logger.info("changeset: {}", libVlc.libvlc_get_changeset());
@@ -254,7 +255,7 @@ public class NeptunePlayer {
 				if (event instanceof KeyEvent) {
 					KeyEvent keyEvent = (KeyEvent) event;
 					if (keyEvent.getID() == KeyEvent.KEY_PRESSED) {
-						if (keyEvent.getKeyCode() == KeyEvent.VK_F12) {
+						if (keyEvent.getKeyCode() == KeyEvent.VK_H) {
 							controlsPanel.setVisible(!controlsPanel.isVisible());
 							videoAdjustPanel.setVisible(!videoAdjustPanel
 									.isVisible());
@@ -406,9 +407,9 @@ public class NeptunePlayer {
 
 		JMenuItem toolsPreferencesMenuItem = new JMenuItem("Preferences...");
 		toolsPreferencesMenuItem.setMnemonic('p');
-		toolsMenu.add(toolsPreferencesMenuItem);
+		//toolsMenu.add(toolsPreferencesMenuItem);
 
-		menuBar.add(toolsMenu);
+		//menuBar.add(toolsMenu);
 
 		JMenu helpMenu = new JMenu("Help");
 		helpMenu.setMnemonic('h');
@@ -477,7 +478,7 @@ public class NeptunePlayer {
 			}
 
 			// You can set a logo like this if you like...
-			File logoFile = new File("./etc/vlcj-logo.png");
+			File logoFile = new File("./Neptune.png");
 			if (logoFile.exists()) {
 				mediaPlayer.setLogoFile(logoFile.getAbsolutePath());
 				mediaPlayer.setLogoOpacity(0.5f);
@@ -485,14 +486,7 @@ public class NeptunePlayer {
 				mediaPlayer.enableLogo(true);
 			}
 
-			// Demo the marquee
-			mediaPlayer.setMarqueeText("vlcj java bindings for vlc");
-			mediaPlayer.setMarqueeSize(40);
-			mediaPlayer.setMarqueeOpacity(95);
-			mediaPlayer.setMarqueeColour(Color.white);
-			mediaPlayer.setMarqueeTimeout(5000);
-			mediaPlayer.setMarqueeLocation(50, 120);
-			mediaPlayer.enableMarquee(true);
+			
 
 			// Not quite sure how crop geometry is supposed to work...
 			//
