@@ -4,6 +4,7 @@
  */
 
 import com.sun.jna.Native;
+
 import java.awt.AWTException;
 import java.awt.Component;
 import java.awt.Rectangle;
@@ -13,13 +14,16 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.JFileChooser;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
+
 import com.sun.jna.NativeLibrary;
 import com.sun.jna.Native;
+
 import uk.co.caprica.vlcj.*;
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.discovery.NativeDiscovery;
@@ -64,6 +68,8 @@ public class NeptuneView extends javax.swing.JFrame {
 		jMenuItem4 = new javax.swing.JMenuItem();
 		jMenu3 = new javax.swing.JMenu();
 		jMenuItem5 = new javax.swing.JMenuItem();
+		jMenu4 = new javax.swing.JMenu();
+		jMenuItem6 = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setAlwaysOnTop(true);
@@ -147,6 +153,22 @@ public class NeptuneView extends javax.swing.JFrame {
 		jMenuBar1.add(jMenu2);
 
 		jMenu3.setText("Media");
+		
+		jMenu4.setText("Draw");
+		
+		jMenuItem6.setText("Sketch Pad");
+		
+		jMenu4.add(jMenuItem6);
+		
+		jMenuBar1.add(jMenu4);
+		
+		jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				
+				Drawing draw = new Drawing();
+				Drawing.main(null);
+			}
+		});
 
 		jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
 				java.awt.event.KeyEvent.VK_P,
@@ -309,12 +331,14 @@ public class NeptuneView extends javax.swing.JFrame {
 	private javax.swing.JMenu jMenu1;
 	private javax.swing.JMenu jMenu2;
 	private javax.swing.JMenu jMenu3;
+	private javax.swing.JMenu jMenu4;
 	private javax.swing.JMenuBar jMenuBar1;
 	private javax.swing.JMenuItem jMenuItem1;
 	private javax.swing.JMenuItem jMenuItem2;
 	private javax.swing.JMenuItem jMenuItem3;
 	private javax.swing.JMenuItem jMenuItem4;
 	private javax.swing.JMenuItem jMenuItem5;
+	private javax.swing.JMenuItem jMenuItem6;
 	private javax.swing.JPanel jPanel1;
 	// End of variables declaration//GEN-END:variables
 }

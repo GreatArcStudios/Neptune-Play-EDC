@@ -1,0 +1,51 @@
+import com.sun.jna.Native;
+import com.sun.jna.NativeLibrary;
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import uk.co.caprica.vlcj.binding.LibVlc;
+import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
+import uk.co.caprica.vlcj.runtime.RuntimeUtil;
+ 
+public class Camera {
+ 
+  private final EmbeddedMediaPlayerComponent mediaPlayerComponent;
+ 
+  public static void main(String[] args) {
+    SwingUtilities.invokeLater(new Runnable() {      
+      public void run() {
+        new Camera();
+      }
+    });
+  }
+  
+  private Camera() {
+     
+     //Membaca file Dll Vlc
+     NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), "C:/Program Files/VideoLAN/VLC");
+     Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
+     System.out.println("JDK Version:  " + System.getProperty("sun.arch.data.model") + " bits.");  
+     
+     JFrame frame = new JFrame("vlcj Tutorial");
+     mediaPlayerComponent = new EmbeddedMediaPlayerComponent();    
+     frame.setContentPane(mediaPlayerComponent);    
+     frame.setLocation(100, 100);       
+     frame.setSize(1050, 600);
+     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     frame.setVisible(true);       
+     
+          //Save video
+          File dir = new File(System.getProperty("user.home"), "Videos");
+          dir.mkdirs();
+          DateFormat df = new SimpleDateFormat("yyyyMMdd-HHmmss");
+          String fileName = dir.getAbsolutePath() + "/Capture-" + df.format(new Date()) + ".mpg";          
+          //Tweak the options depending on your encoding requirements and audio       
+          //capture device (ALSA is not likely to work on Windows of course)
+          //String[] options = {":sout=#transcode{vcodec=mp4v,vb=4096,scale=1,acodec=mpga,ab=128,channels=2,samplerate=44100}:duplicate{dst=file{dst=" + fileName + "},dst=display}", ":input-slave=alsa://hw:0,0"};
+          String [] options =  {":sout=#transcode{vcodec=mpgv,vb=4094,scale=1,acodec=mpg,ab=128,channels=2,samplerate=44100}:duplicate{dst=file{dst=" + fileName + "},dst=display}"};
+          mediaPlayerComponent.getMediaPlayer().playMedia("rtsp://10.10.10.3:554/nphMpeg4/g726-640x480",options);            
+  }
+}
