@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.Graphics;
@@ -14,15 +13,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
 import javax.swing.*;
-
+    
 public class Drawing {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		JToolBar Tb = new JToolBar();
 		JScrollBar Sb = new JScrollBar();
 		frame.setVisible(true);
-		frame.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
-
+		
 		JRadioButton blue = new JRadioButton("Blue");
 		JRadioButton red = new JRadioButton("Red");
 		JRadioButton green = new JRadioButton("Green");
@@ -67,15 +65,13 @@ public class Drawing {
 		Tb.add(green);
 		Tb.add(black);
 		Tb.add(gray);
-		JScrollPane Sp = new JScrollPane(drawPad,
-				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane Sp = new JScrollPane(drawPad,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		frame.add(Sp, BorderLayout.CENTER);
 
 		frame.add(Tb, BorderLayout.NORTH);
 		frame.setMaximumSize(new Dimension(1920, 1080));
 		frame.setSize(500, 500);
-		frame.setMinimumSize(new Dimension(400, 400));
+		frame.setMinimumSize(new Dimension(400,400));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
