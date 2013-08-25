@@ -5,4 +5,5 @@
 <fullyQualifiedTypeName name="javax.swing.JScrollBar"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="Drawing"/>
+<fullyQualifiedTypeName name="java.awt.Event"/>
 </qualifiedTypeNameHistroy>

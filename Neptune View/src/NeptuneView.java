@@ -72,7 +72,6 @@ public class NeptuneView extends javax.swing.JFrame {
 		jMenuItem6 = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setAlwaysOnTop(true);
 		setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 		setName("Neptune View"); // NOI18N
 		setSize(new java.awt.Dimension(876, 453));
@@ -201,6 +200,7 @@ public class NeptuneView extends javax.swing.JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMenuItem5ActionPerformed
+		new Thread();
 		NeptunePlayer tP = new NeptunePlayer(null);
 
 		try {
@@ -230,7 +230,7 @@ public class NeptuneView extends javax.swing.JFrame {
 	}// GEN-LAST:event_jMenuItem1ActionPerformed
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMenuItem2ActionPerformed
-		NeptuneView Nf = new NeptuneView();
+		NeptuneViewDispose Nf = new NeptuneViewDispose();
 		Nf.setVisible(true);// TODO add your handling code here:
 	}// GEN-LAST:event_jMenuItem2ActionPerformed
 
