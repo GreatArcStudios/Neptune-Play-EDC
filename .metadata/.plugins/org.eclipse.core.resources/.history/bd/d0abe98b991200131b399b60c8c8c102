@@ -1,0 +1,39 @@
+
+public class CaptureTest {
+	public static void main(final String[] args) {
+        NativeLibrary.addSearchPath("vlc", "/Applications/VLC.app/Contents/MacOS/lib/");
+        SwingUtilities.invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            new CaptureTest().start("screen://");
+          }
+        });
+      }
+
+public CaptureTest() {
+        factory = new MediaPlayerFactory();
+        mediaPlayer = (HeadlessMediaPlayer) factory.newMediaPlayer();
+      }
+
+      private void start(String mrl) {
+
+        File dir = new File(System.getProperty("user.home"), "Videos");
+        dir.mkdirs();
+
+        DateFormat df = new SimpleDateFormat("yyyyMMdd-HHmmss");
+        String fileName =  dir.getAbsolutePath() + "/Capture-" + df.format(new Date()) + ".mp4";
+
+        String[] options = {
+        ":sout=#transcode{vcodec=h264,acodec=mp4a}:std{mux=mp4,access=file,dst=" + fileName + "}", ":input-slave=screen://"
+        };
+
+        mediaPlayer.playMedia(mrl, options);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        mediaPlayer.stop();
+        mediaPlayer.release(); 
+      }
+}

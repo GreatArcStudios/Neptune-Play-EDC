@@ -28,6 +28,7 @@ public class Drawing {
 		JRadioButton green = new JRadioButton("Green");
 		JRadioButton black = new JRadioButton("Black");
 		JRadioButton gray = new JRadioButton("Gray");
+		JButton col = new JButton("Color");
 		final DrawPad drawPad = new DrawPad();
 
 		JButton clearButton = new JButton("Clear");
@@ -61,12 +62,22 @@ public class Drawing {
 				drawPad.graphics2D.setPaint(Color.GRAY);
 			}
 		});
+		col.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Color color = (Color.BLACK);
+				color = JColorChooser
+						.showDialog(null, "Pick Text Color", color);
+				drawPad.graphics2D.setPaint(color);
+			}
+		});
 		frame.add(clearButton, BorderLayout.SOUTH);
 		Tb.add(blue);
 		Tb.add(red);
 		Tb.add(green);
 		Tb.add(black);
 		Tb.add(gray);
+		Tb.addSeparator();
+		Tb.add(col);
 		JScrollPane Sp = new JScrollPane(drawPad,
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

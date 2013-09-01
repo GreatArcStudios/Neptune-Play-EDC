@@ -103,8 +103,10 @@ public class NeptunePlayer {
 	private EmbeddedMediaPlayer mediaPlayer;
 
 	public static void main(final String[] args) throws Exception {
-		NativeLibrary.addSearchPath("vlc", "/Applications/VLC.app/Contents/MacOS/lib");
-		System.setProperty("jna.library.path", "/Applications/VLC.app/Contents/MacOS/lib");
+		NativeLibrary.addSearchPath("vlc",
+				"/Applications/VLC.app/Contents/MacOS/lib");
+		System.setProperty("jna.library.path",
+				"/Applications/VLC.app/Contents/MacOS/lib");
 		LibVlc libVlc = LibVlcFactory.factory().create();
 		Logger.info("  version: {}", libVlc.libvlc_get_version());
 		Logger.info(" compiler: {}", libVlc.libvlc_get_compiler());
