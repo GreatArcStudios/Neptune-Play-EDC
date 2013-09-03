@@ -167,7 +167,7 @@ public class PlayerVideoAdjustPanel extends JPanel {
 
 	private void registerListeners() {
 		enableVideoAdjustCheckBox.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				boolean enabled = enableVideoAdjustCheckBox.isSelected();
 				contrastSlider.setEnabled(enabled);
@@ -180,7 +180,7 @@ public class PlayerVideoAdjustPanel extends JPanel {
 		});
 
 		contrastSlider.addChangeListener(new ChangeListener() {
-			@Override
+			
 			public void stateChanged(ChangeEvent e) {
 				JSlider source = (JSlider) e.getSource();
 				// if(!source.getValueIsAdjusting()) {
@@ -190,7 +190,7 @@ public class PlayerVideoAdjustPanel extends JPanel {
 		});
 
 		brightnessSlider.addChangeListener(new ChangeListener() {
-			@Override
+		
 			public void stateChanged(ChangeEvent e) {
 				JSlider source = (JSlider) e.getSource();
 				// if(!source.getValueIsAdjusting()) {

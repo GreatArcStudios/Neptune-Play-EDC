@@ -135,7 +135,7 @@ public class NeptunePlayer {
 			}
 
 		SwingUtilities.invokeLater(new Runnable() {
-			@Override
+			
 			public void run() {
 
 				new NeptunePlayer(args);
@@ -252,7 +252,6 @@ public class NeptunePlayer {
 		// ActionMap with a JFrame - that would solve all sorts of focus issues
 		// too
 		Toolkit.getDefaultToolkit().addAWTEventListener(new AWTEventListener() {
-			@Override
 			public void eventDispatched(AWTEvent event) {
 				if (event instanceof KeyEvent) {
 					KeyEvent keyEvent = (KeyEvent) event;
@@ -471,7 +470,7 @@ public class NeptunePlayer {
 			Logger.debug("dimension={}", dimension);
 			if (dimension != null) {
 				SwingUtilities.invokeLater(new Runnable() {
-					@Override
+					
 					public void run() {
 						videoSurface.setSize(dimension);
 						mainFrame.pack();

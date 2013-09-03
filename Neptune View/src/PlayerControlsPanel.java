@@ -331,63 +331,63 @@ public class PlayerControlsPanel extends JPanel {
 		});
 
 		previousChapterButton.addActionListener(new ActionListener() {
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.previousChapter();
 			}
 		});
 
 		rewindButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				skip(-SKIP_TIME_MS);
 			}
 		});
 
 		stopButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.stop();
 			}
 		});
 
 		pauseButton.addActionListener(new ActionListener() {
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.pause();
 			}
 		});
 
 		playButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.play();
 			}
 		});
 
 		fastForwardButton.addActionListener(new ActionListener() {
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				skip(SKIP_TIME_MS);
 			}
 		});
 
 		nextChapterButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.nextChapter();
 			}
 		});
 
 		toggleMuteButton.addActionListener(new ActionListener() {
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.mute();
 			}
 		});
 
 		volumeSlider.addChangeListener(new ChangeListener() {
-			@Override
+			
 			public void stateChanged(ChangeEvent e) {
 				JSlider source = (JSlider) e.getSource();
 				// if(!source.getValueIsAdjusting()) {
@@ -397,7 +397,7 @@ public class PlayerControlsPanel extends JPanel {
 		});
 
 		captureButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				File file = new File("Neptune Play Snapshot.png");
 				mediaPlayer.saveSnapshot(file);
@@ -405,7 +405,7 @@ public class PlayerControlsPanel extends JPanel {
 		});
 
 		ejectButton.addActionListener(new ActionListener() {
-			@Override
+	
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.enableOverlay(false);
 				if (JFileChooser.APPROVE_OPTION == fileChooser
@@ -418,7 +418,7 @@ public class PlayerControlsPanel extends JPanel {
 		});
 
 		connectButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.enableOverlay(false);
 				String mediaUrl = (String) JOptionPane.showInputDialog(
@@ -432,14 +432,14 @@ public class PlayerControlsPanel extends JPanel {
 		});
 
 		fullScreenButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				mediaPlayer.toggleFullScreen();
 			}
 		});
 
 		subTitlesButton.addActionListener(new ActionListener() {
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				int spu = mediaPlayer.getSpu();
 				if (spu > -1) {
@@ -463,7 +463,7 @@ public class PlayerControlsPanel extends JPanel {
 			this.mediaPlayer = mediaPlayer;
 		}
 
-		@Override
+
 		public void run() {
 			final long time = mediaPlayer.getTime();
 			final int position = (int) (mediaPlayer.getPosition() * 1000.0f);
@@ -474,7 +474,7 @@ public class PlayerControlsPanel extends JPanel {
 			// Event
 			// Dispatch Thread
 			SwingUtilities.invokeLater(new Runnable() {
-				@Override
+			
 				public void run() {
 					if (mediaPlayer.isPlaying()) {
 						updateTime(time);
